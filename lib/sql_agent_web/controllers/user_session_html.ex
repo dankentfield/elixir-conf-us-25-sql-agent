@@ -1,0 +1,9 @@
+defmodule SqlAgentWeb.UserSessionHTML do
+  use SqlAgentWeb, :html
+
+  embed_templates "user_session_html/*"
+
+  defp local_mail_adapter? do
+    Application.get_env(:sql_agent, SqlAgent.Mailer)[:adapter] == Swoosh.Adapters.Local
+  end
+end
